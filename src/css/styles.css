@@ -6,13 +6,112 @@
 */
 /* Common styles */
 @import url('./reset.css');
-@import url('./base.css');
+/* @import url('./base.css');
 @import url('./container.css');
-@import url('./animations.css');
+@import url('./animations.css'); */
 
 /* Sections style */
-@import url('./header.css');
+/* @import url('./header.css');
 @import url('./vite-promo.css');
 @import url('./badges.css');
 @import url('./back-link.css');
-@import url('./footer.css');
+@import url('./footer.css'); */
+
+
+.title-time {
+   margin-top: 40px;
+  margin-left: 250px;
+  text-transform: uppercase;
+ font-weight: 200;
+font-size: 40px;
+}
+
+
+.timer-box{
+  padding-top: 40px;
+  margin-left: 140px;
+  
+}
+
+.input-btn {
+  height: 40px;
+}
+
+.input-time {
+border-radius: 4px;
+width: 272px;
+
+
+  font-size: 16px; /* Розмір тексту */
+  padding: 8px 12px; /* Внутрішні відступи: зверху/знизу - 8px, з боків - 12px */
+  border: 1px solid #ccc; /* Сіра рамка навколо поля */
+
+  outline: none; /* Видалення стандартного синього обведення при фокусі */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Плавна зміна кольору рамки та тіні */
+}
+.input-time:hover {
+border-color: #000;
+}
+
+.input-time:focus {
+border-color: #4e75ff;
+}
+
+.input-time:disabled {
+  background-color: #fafafa;
+  background-color: #808080;
+}
+
+.button-start {
+  width: 75px;
+ 
+  font-size: 16px; /* Розмір тексту */
+  padding: 8px 16px; /* Внутрішні відступи*/
+  border: none; 
+  border-radius: 4px; /* Закруглені кути кнопки */
+  cursor: pointer; /* Курсор змінюється на "руку", щоб показати, що кнопка клікабельна */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Плавна зміна кольору фону та тіні */
+  background-color: #4e75ff;
+  color: #ffff;
+}
+
+.button-start:disabled {
+background-color: #cfcfcf;
+color: #989898;
+}
+
+.button-start:hover {
+background-color: #6c8cff;
+}
+
+
+
+.timer {
+  display: flex;
+  gap: 24px;
+  padding-top: 34px;
+}
+
+.field {
+  text-align: center;
+}
+
+.value {
+display: block;
+font-weight: 400;
+font-size: 40px;
+line-height: 120%;
+letter-spacing: 0.04em;
+color: #2e2f42;
+}
+
+.label {
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color: #2e2f42;
+text-transform: uppercase;
+  
+}
+
+
