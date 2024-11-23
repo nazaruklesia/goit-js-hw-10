@@ -11,9 +11,9 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
 
-
 const datetimePicker = document.querySelector("#datetime-picker");
 const btnStart = document.querySelector("button[data-start]");
+
 
 let userSelectedDate = null;
 
@@ -24,23 +24,26 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
+
   onClose(selectedDates) {
+
     const selectedDate = selectedDates[0];
-    if (selectedDate <= new Date) {
+    if (selectedDate <= new Date()) {
       window.alert("Please choose a date in the future");
       btnStart.disabled = true;
     }
     else {
-      btnStart.disabled = false;
       userSelectedDate = selectedDate;
+      btnStart.disabled = false;
     }
   },
 };
+
 flatpickr(datetimePicker, options);
 
 
 function addLeadingZero(value) {
-  return String(value).padStart(2, '0');
+  return String(value).padStart(2, "0");
 }
 
 function convertMs(ms) {
@@ -73,3 +76,23 @@ function updateTime({ days, hours, minutes, seconds }) {
   minutesData.textContent = addLeadingZero(minutes);
   secondsData.textContent = addLeadingZero(seconds);
 }
+
+
+btnStart.addEventListener("click", () => {
+  btnStart.disabled = true;
+  datetimePicker.disabled = true;
+
+
+  const intervalId = setInterval(() => {
+    const now = new Data();
+    const diffTime = userSelectedDate - now;
+
+    if (diffTime <= 0) {
+      clearInterval(intervalId);
+      datetimePicker.disabled = false;
+      return;
+    }
+    const leftTime = convertMs(diffTime);
+    updateTime(leftTime);
+  }, 1000);
+});
