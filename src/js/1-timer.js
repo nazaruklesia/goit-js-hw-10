@@ -5,6 +5,9 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
 
+
+
+
 // Описаний у документації
 import iziToast from "izitoast";
 // Додатковий імпорт стилів
@@ -13,6 +16,8 @@ import "izitoast/dist/css/iziToast.min.css";
 
 const datetimePicker = document.querySelector("#datetime-picker");
 const btnStart = document.querySelector("button[data-start]");
+
+
 
 
 let userSelectedDate = null;
@@ -29,7 +34,12 @@ const options = {
 
     const selectedDate = selectedDates[0];
     if (selectedDate <= new Date()) {
-      window.alert("Please choose a date in the future");
+      // window.alert("Please choose a date in the future");
+      iziToast.error({
+        message: "Please choose a date in the future",
+        position: "topRight",
+       });
+
       btnStart.disabled = true;
     }
     else {
@@ -60,12 +70,10 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
-console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
 
 
-const daysData = document.querySelector("[days-data]");
+
+const daysData = document.querySelector("[data-days]");
 const hoursData = document.querySelector("[data-hours]");
 const minutesData = document.querySelector("[data-minutes]");
 const secondsData = document.querySelector("[data-seconds]");
@@ -84,12 +92,13 @@ btnStart.addEventListener("click", () => {
 
 
   const intervalId = setInterval(() => {
-    const now = new Data();
+    const now = new Date();
     const diffTime = userSelectedDate - now;
 
     if (diffTime <= 0) {
       clearInterval(intervalId);
       datetimePicker.disabled = false;
+      updateTime({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       return;
     }
     const leftTime = convertMs(diffTime);
