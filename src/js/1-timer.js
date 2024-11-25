@@ -105,3 +105,11 @@ btnStart.addEventListener("click", () => {
     updateTime(leftTime);
   }, 1000);
 });
+
+
+
+
+
+
+
+
