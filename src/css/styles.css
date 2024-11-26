@@ -40,14 +40,12 @@ font-size: 40px;
 .input-time {
 border-radius: 4px;
 width: 272px;
+font-size: 16px; 
+padding: 8px 12px; 
+border: 1px solid #ccc; 
 
-
-  font-size: 16px; /* Розмір тексту */
-  padding: 8px 12px; /* Внутрішні відступи: зверху/знизу - 8px, з боків - 12px */
-  border: 1px solid #ccc; /* Сіра рамка навколо поля */
-
-  outline: none; /* Видалення стандартного синього обведення при фокусі */
-  transition: border-color 0.3s, box-shadow 0.3s; /* Плавна зміна кольору рамки та тіні */
+outline: none; 
+transition: border-color 0.3s, box-shadow 0.3s; 
 }
 .input-time:hover {
 border-color: #000;
@@ -65,12 +63,12 @@ border-color: #4e75ff;
 .button-start {
   width: 75px;
  
-  font-size: 16px; /* Розмір тексту */
-  padding: 8px 16px; /* Внутрішні відступи*/
+  font-size: 16px; 
+  padding: 8px 16px; 
   border: none; 
-  border-radius: 4px; /* Закруглені кути кнопки */
-  cursor: pointer; /* Курсор змінюється на "руку", щоб показати, що кнопка клікабельна */
-  transition: background-color 0.3s, box-shadow 0.3s; /* Плавна зміна кольору фону та тіні */
+  border-radius: 4px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, box-shadow 0.3s; 
   background-color: #4e75ff;
   color: #ffff;
 }
@@ -111,7 +109,110 @@ font-size: 16px;
 line-height: 150%;
 color: #2e2f42;
 text-transform: uppercase;
+}
+
+
+
+
+
+form {
+  margin-left: 100px;
+width: 360px;
+
+}
+
+.container-form {
+  padding-bottom: 20px;
   
+ 
+}
+
+/* Стилі для текстових полів */
+input[type="number"] {
+  width: 359px;
+
+  border: 1px solid #808080;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+height: 40px;
+}
+
+input[type="number"]:hover {
+  border-color: #000000;
+  background-color: #f9f9f9;
+  
+}
+
+
+input[type="number"]:focus {
+  border-color: #4E75FF;
+  outline: none;
+  background-color: #fff;
+}
+
+
+.input-state {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.state-txt {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+input[type="radio"] {
+  border-radius: 4px;
+stroke-width: 1px;
+border-color: #808080;
+}
+
+input[type="radio"]:hover,
+input[type="radio"]:focus {
+  border-color: #000;
+}
+
+
+
+.input-state input[type="radio"] {
+  accent-color: #4E75FF;
+}
+
+.span-txt {
+font-weight: 400;
+line-height: 150%;
+color: #2e2f42;
+}
+
+
+.btn-create {
+  border-radius: 8px;
+padding: 8px 16px;
+width: 360px;
+height: 40px;
+
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: 0.04em;
+color: #fff;
+  border: none;
+  background-color: #4E75FF;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.btn-create:hover,
+.btn-create:focus {
+  background-color: #6C8CFF;
 }
 
 

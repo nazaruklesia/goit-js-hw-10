@@ -29,7 +29,22 @@ function handleSubmit(event) {
             reject(delay);
             }
         }, delay)
+        console.log(promise);
     });
-   
+
+    promise
+        .then(delay => {
+            iziToast.success({
+                message: `✅ Fulfilled promise in ${delay}ms`,
+                position: "topRight",
+            });
+        })
+        .catch(delay => {
+            iziToast.error({
+                message: `❌ Rejected promise in ${delay}ms`,
+                position: "topRight",
+            });
+        })
+        .finally(() => form.reset());
 }
 
